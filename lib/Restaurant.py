@@ -2,12 +2,12 @@ class Restaurant:
     all_restaurants = []
 
     def __init__(self, name):
-        self.name = name
+        self._name = name
         self.reviews_list = []
         Restaurant.all_restaurants.append(self)
 
     def name(self):
-        return self.name
+        return self._name
 
     @classmethod
     def all(cls):

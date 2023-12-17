@@ -30,5 +30,5 @@ print(f"\nReviews for {restaurant1.name}:")
 for review in restaurant1.reviews():
     print(f"{review.customer().full_name()}: {review.review_name()} - Rating: {review.rating()}")
 
-print(Customer.restaurants)
+print(Customer.all_customers)
 print(Restaurant.customers)
