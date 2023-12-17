@@ -1,10 +1,10 @@
+from Review import Review 
 class Customer:
-  all=[]
+  all_customers=[]
   def __init__(self,name,f_name):
     self.name = name
     self.f_name = f_name
-    full_name = f"{name} {f_name}"
-    self.add_customer_to_all(full_name)
+    Customer.all_customers.append(self)
   
 
   def given_name(self):
@@ -14,11 +14,15 @@ class Customer:
   def full_name(self):
     return(f"({self.name} {self.f_name})")
   @classmethod
-  def add_customer_to_all(cls,full_name):
-    cls.all.append(full_name)
-  @classmethod
-  def show_customer(cls):
-    print(cls.all)
+  def all(cls):
+    return cls.all_customers
+  def restaurant(self):
+     return list(set([review.restaurant() for review in Review.all() if review.customer() == self]))
+  def add_review(self, restaurant,rating):
+    new_review = Review(self, restaurant, rating)
+    return new_review
+    
+  
 
   pass
 
