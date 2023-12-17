@@ -5,8 +5,7 @@ class Customer:
     self.f_name = f_name
     full_name = f"{name} {f_name}"
     self.add_customer_to_all(full_name)
-  # def test_drive(self):
-  #    print(f"({self.name} {self.f_name})")
+  
 
   def given_name(self):
     return self.name
