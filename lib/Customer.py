@@ -23,6 +23,8 @@ class Customer:
 
     def num_reviews(self):
         return len([review for review in Review.all() if review.customer() == self])
+        
+                               
 
     @classmethod
     def find_by_name(cls, name):
@@ -37,6 +39,7 @@ class Customer:
     def restaurants(self):
         return list(set([review.restaurant() for review in Review.all() if review.customer() == self]))
 
-    def add_review(self, restaurant, name, rating):  # <-- Add the 'name' parameter
-      new_review = Review(self, restaurant, name, rating)  # <-- Pass 'name' to Review
+    def add_review(self, restaurant, name, rating): 
+      new_review = Review(self, restaurant, name, rating)  
       return new_review
+# print(restaurants())

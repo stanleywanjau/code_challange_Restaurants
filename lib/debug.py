@@ -15,20 +15,22 @@ review1 = customer1.add_review(restaurant1, "Good experience", 4)
 review2 = customer1.add_review(restaurant2, "Excellent service", 5)
 review3 = customer2.add_review(restaurant1, "Average", 3)
 
-# Print customer information
+# # Print customer information
 print("All Customers:")
 for customer in Customer.all():
-    print(f"{customer.full_name} - Number of Reviews: {customer.num_reviews()}")
+    print(f"{customer.full_name()} - Number of Reviews: {customer.num_reviews()}")
 
 # Print restaurant information
 print("\nAll Restaurants:")
 for restaurant in Restaurant.all():
-    print(f"{restaurant.name} - Average Rating: {restaurant.average_star_rating()}")
+    print(f"{restaurant.name()} - Average Rating: {restaurant.average_star_rating()}")
 
 # Print reviews for a specific restaurant
-print(f"\nReviews for {restaurant1.name}:")
+print(f"\nReviews for {restaurant1.name()}:")
 for review in restaurant1.reviews():
     print(f"{review.customer().full_name()}: {review.review_name()} - Rating: {review.rating()}")
 
-print(Customer.all_customers)
-print(Restaurant.customers)
+
+
+print(restaurant1.customers())
+

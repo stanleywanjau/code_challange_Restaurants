@@ -1,3 +1,5 @@
+from Review import Review
+
 class Restaurant:
     all_restaurants = []
 
@@ -17,7 +19,7 @@ class Restaurant:
         return self.reviews_list
 
     def customers(self):
-        return list(set([review.customer() for review in self.reviews_list]))
+        return list(set([review.customer() for review in self.reviews_list if review.customer()==self]))
 
     def average_star_rating(self):
         if not self.reviews_list:
