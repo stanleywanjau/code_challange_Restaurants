@@ -7,9 +7,11 @@ class Restaurant:
         self._name = name
         self.reviews_list = []
         Restaurant.all_restaurants.append(self)
-
+        
+    @property
     def name(self):
         return self._name
+    
 
     @classmethod
     def all(cls):
